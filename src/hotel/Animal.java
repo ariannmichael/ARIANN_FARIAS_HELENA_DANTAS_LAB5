@@ -1,22 +1,22 @@
 package hotel;
 
 public class Animal {
-	String nome;
-	String tipo;
-	int idade;
+	private String nome;
+	private String tipo;
+	private int idade;
 
 	public Animal(String nome, String tipo, int idade) throws Exception {
 		this.nome = nome;
 		this.tipo = tipo;
 		this.idade = idade;
 		if(nome == null || nome.trim().equals("")){
-			throw new Exception("Nome invalido");
+			throw new Exception("Nome de um animal nao pode ser nulo ou vazio");
 		}
 		if(tipo == null || tipo.trim().equals("")){
-			throw new Exception("Tipo invalido");
+			throw new Exception("Tipo de um animal nao pode ser nulo ou vazio");
 		}
 		if(idade < 0){
-			throw new Exception("Idade invalida");
+			throw new Exception("Idade de um animal nao pode ser abaixo de 0");
 		}
 	}
 
