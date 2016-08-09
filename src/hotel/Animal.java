@@ -6,9 +6,7 @@ public class Animal {
 	private int idade;
 
 	public Animal(String nome, String tipo, int idade) throws Exception {
-		this.nome = nome;
-		this.tipo = tipo;
-		this.idade = idade;
+
 		if (nome == null || nome.trim().equals("")) {
 			throw new Exception("Nome de um animal nao pode ser nulo ou vazio");
 		}
@@ -18,6 +16,9 @@ public class Animal {
 		if (idade < 0) {
 			throw new Exception("Idade de um animal nao pode ser abaixo de 0");
 		}
+		this.nome = nome;
+		this.tipo = tipo;
+		this.idade = idade;
 	}
 
 	@Override
