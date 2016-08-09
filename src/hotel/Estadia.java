@@ -17,46 +17,31 @@ public class Estadia {
 		}
 		this.dias = dias;
 		this.valor = valor;
+		animal = new Animal(nome, tipo, idade);
 	}
 
 	public String getNome() {
 		return animal.getNome();
 	}
 
-	public void setNome(String nome) {
-		nome = animal.getNome();
-	}
 
 	public String getTipo() {
 		return animal.getTipo();
 	}
 
-	public void setTipo(String tipo) {
-		tipo = animal.getTipo();
-	}
 
 	public int getIdade() {
 		return animal.getIdade();
 	}
 
-	public void setIdade(int idade) {
-		idade = animal.getIdade();
-	}
 
 	public int getDias() {
 		return dias;
 	}
 
-	public void setDias(int dias) {
-		this.dias = dias;
-	}
 
 	public double getValor() {
 		return valor;
-	}
-
-	public void setValor(double valor) {
-		this.valor = valor;
 	}
 
 	@Override

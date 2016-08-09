@@ -9,13 +9,13 @@ public class Animal {
 		this.nome = nome;
 		this.tipo = tipo;
 		this.idade = idade;
-		if(nome == null || nome.trim().equals("")){
+		if (nome == null || nome.trim().equals("")) {
 			throw new Exception("Nome de um animal nao pode ser nulo ou vazio");
 		}
-		if(tipo == null || tipo.trim().equals("")){
+		if (tipo == null || tipo.trim().equals("")) {
 			throw new Exception("Tipo de um animal nao pode ser nulo ou vazio");
 		}
-		if(idade < 0){
+		if (idade < 0) {
 			throw new Exception("Idade de um animal nao pode ser abaixo de 0");
 		}
 	}
@@ -34,7 +34,8 @@ public class Animal {
 	public boolean equals(Object obj) {
 		if (obj instanceof Animal) {
 			Animal novoAnimal = (Animal) obj;
-			if (novoAnimal.getNome().equals(nome) && novoAnimal.getTipo().equals(tipo)) {
+			if (novoAnimal.getNome().equals(nome)
+					&& novoAnimal.getTipo().equals(tipo)) {
 				return true;
 			}
 		}
@@ -45,24 +46,12 @@ public class Animal {
 		return nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
 	public String getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
 	public int getIdade() {
 		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
 	}
 
 }
