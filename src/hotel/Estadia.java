@@ -1,58 +1,46 @@
 package hotel;
 
 public class Estadia {
-	Animal animal;
-	String nome;
-	String tipo;
-	int idade;
-	int dias;
-	double valor;
+	
+	private Animal animal;
+	private int dias;
+	private double valor;
 
 	public Estadia(String nome, String tipo, int idade, int dias, double valor) throws Exception {
-		this.nome = nome;
-		this.tipo = tipo;
-		this.idade = idade;
-		this.dias = dias;
-		this.valor = valor;
-		if (nome == null || nome.trim().equals("")){
-			throw new Exception("Nome de um animal nao pode ser nulo ou vazio");
-		}
-		if (tipo == null || tipo.trim().equals("")){
-			throw new Exception("Tipo de um animal nao pode ser nulo ou vazio");
-		}
-		if (idade < 0){
-			throw new Exception("Idade de um animal nao pode ser abaixo de 0");
-		}
+	
+		
 		if (dias < 1){
 			throw new Exception("Estadia de um animal nao pode ser abaixo de 1 dia");
 		}
-		if (valor < 0){
+		if (valor <= 0){
 			throw new Exception("Valor da estadia de uma animal nao pode ser abaixo de 0");
 		}
+		this.dias = dias;
+		this.valor = valor;
 	}
 
 	public String getNome() {
-		return nome;
+		return animal.getNome();
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		nome = animal.getNome();
 	}
 
 	public String getTipo() {
-		return tipo;
+		return animal.getTipo();
 	}
 
 	public void setTipo(String tipo) {
-		this.tipo = tipo;
+		tipo = animal.getTipo();
 	}
 
 	public int getIdade() {
-		return idade;
+		return animal.getIdade();
 	}
 
 	public void setIdade(int idade) {
-		this.idade = idade;
+		idade = animal.getIdade();
 	}
 
 	public int getDias() {
@@ -70,24 +58,21 @@ public class Estadia {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((animal == null) ? 0 : animal.hashCode());
 		result = prime * result + dias;
-		result = prime * result + idade;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(valor);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 
-
 	public String toString(){
-		String retorno = nome + ", " + tipo + ", " + dias + "dias com o preço de R$ " + valor;
+		String retorno = animal.getNome() + ", " + animal.getIdade() + ", " + dias + "dias com o preco de R$ " + valor;
 		return retorno;
 	}
 
