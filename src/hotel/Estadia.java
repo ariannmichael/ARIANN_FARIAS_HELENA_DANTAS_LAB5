@@ -1,19 +1,21 @@
 package hotel;
 
 public class Estadia {
-	
+
 	private Animal animal;
 	private int dias;
 	private double valor;
 
-	public Estadia(String nome, String tipo, int idade, int dias, double valor) throws Exception {
-	
-		
-		if (dias < 1){
-			throw new Exception("Estadia de um animal nao pode ser abaixo de 1 dia");
+	public Estadia(String nome, String tipo, int idade, int dias, double valor)
+			throws Exception {
+
+		if (dias < 1) {
+			throw new Exception(
+					"Estadia de um animal nao pode ser abaixo de 1 dia");
 		}
-		if (valor <= 0){
-			throw new Exception("Valor da estadia de uma animal nao pode ser abaixo de 0");
+		if (valor <= 0) {
+			throw new Exception(
+					"Valor da estadia de uma animal nao pode ser abaixo de 0");
 		}
 		this.dias = dias;
 		this.valor = valor;
@@ -24,21 +26,17 @@ public class Estadia {
 		return animal.getNome();
 	}
 
-
 	public String getTipo() {
 		return animal.getTipo();
 	}
-
 
 	public int getIdade() {
 		return animal.getIdade();
 	}
 
-
 	public int getDias() {
 		return dias;
 	}
-
 
 	public double getValor() {
 		return valor;
@@ -56,11 +54,10 @@ public class Estadia {
 		return result;
 	}
 
-	public String toString(){
-		String retorno = animal.getNome() + ", " + animal.getIdade() + ", " + dias + "dias com o preco de R$ " + valor;
+	public String toString() {
+		String retorno = animal.getNome() + ", " + animal.getIdade() + ", "
+				+ dias + "dias com o preco de R$ " + valor;
 		return retorno;
 	}
-
-	
 
 }
