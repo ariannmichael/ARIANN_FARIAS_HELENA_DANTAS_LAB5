@@ -15,6 +15,7 @@ public class Estadia {
 		if (valor <= 0){
 			throw new Exception("Valor da estadia de uma animal nao pode ser abaixo de 0");
 		}
+		animal = new Animal(nome, tipo, idade);
 		this.dias = dias;
 		this.valor = valor;
 	}
